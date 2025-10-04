@@ -1140,6 +1140,105 @@ section,
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
+/* Contact Form updated */
+.contact .contact-my-form {
+  background-color: var(--surface-color);
+  height: 100%;
+  padding: 30px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 575px) {
+  .contact .contact-my-form {
+    padding: 20px;
+  }
+}
+
+.form-status {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  width: 100%;
+}
+
+.form-status .loading,
+.form-status .sent-message,
+.form-status .error-message {
+  display: none;
+  margin: 5px auto 24px;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  max-width: 100%;
+  animation: fadeIn 0.35s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+/* Message types */
+.form-status .loading {
+  background: rgba(27, 177, 220, 0.85);
+  color: #ffffff;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 12px rgba(27, 177, 220, 0.3);
+}
+
+.form-status .sent-message {
+  background: rgba(0, 196, 111, 0.15);
+  color: #00b46a;
+  border: 1px solid rgba(0, 196, 111, 0.4);
+  box-shadow: 0 3px 10px rgba(0, 196, 111, 0.15);
+}
+
+.form-status .error-message {
+  background: rgba(255, 59, 59, 0.15);
+  color: #e63946;
+  border: 1px solid rgba(255, 59, 59, 0.25);
+  box-shadow: 0 3px 10px rgba(255, 59, 59, 0.1);
+}
+
+
+.form-status .d-block {
+  display: inline-block !important;
+}
+
+/* Subtle entrance animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+
+  .form-status .loading,
+  .form-status .sent-message,
+  .form-status .error-message {
+    font-size: 14px;
+    padding: 9px 15px;
+    border-radius: 8px;
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .form-status .loading,
+  .form-status .sent-message,
+  .form-status .error-message {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
+/* Contact Form updated End */
 
 /*--------------------------------------------------------------
 # Portfolio Details Section
