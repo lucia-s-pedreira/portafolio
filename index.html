@@ -257,35 +257,292 @@
 
     </section><!-- /Resume Section -->
 
-  
-
-    <!-- ======= Portfolio Section ======= -->
+  <!-- ======= Portfolio Section ======= -->
 <section id="portfolio" class="portfolio section light-background">
-
-  <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
     <h2>Portafolio</h2>
-    <p>En esta sección se presentan proyectos que reflejan la formación y experiencia práctica adquirida en análisis de
-      datos, automatización con Python y gestión de información con SQL. Cada proyecto demuestra la capacidad de
-      transformar datos en resultados claros y útiles, aplicando técnicas de análisis e inteligencia artificial para
-      resolver problemas reales.</p>
-  </div><!-- End Section Title -->
-
+    <p>En esta sección se presentan proyectos que reflejan formación y experiencia en análisis de datos, Python y SQL.
+      Cada proyecto demuestra la capacidad de transformar datos en resultados claros y útiles.</p>
+  </div>
   <div class="container">
     <div class="row gy-4">
 
-      <!-- Project 1 -->
+      <!-- Project Cards -->
       <div class="col-lg-4 col-md-6">
-        <div class="project-box">
-          <h4>SQL Data Analysis</h4>
-          <p class="desc">Proyecto de análisis de usuarios activos y resumen de pedidos con SQL.</p>
+        <div class="project-card">
+          <img src="assets/img/portfolio/project1.png" alt="SQL Data Analysis">
+          <div class="overlay">
+            <button class="btn-view" data-project="0">Ver Código</button>
+          </div>
+        </div>
+      </div>
 
-          <input type="checkbox" id="sql1" class="toggle">
-          <label for="sql1" class="btn-view">Ver Código</label>
+      <div class="col-lg-4 col-md-6">
+        <div class="project-card">
+          <img src="assets/img/portfolio/project1.png" alt="Python Automatización">
+          <div class="overlay">
+            <button class="btn-view" data-project="1">Ver Código</button>
+          </div>
+        </div>
+      </div>
 
-          <div class="code-box">
-            <pre><code>
--- Obtener usuarios activos
+      <div class="col-lg-4 col-md-6">
+        <div class="project-card">
+          <img src="assets/img/portfolio/project1.png" alt="Machine Learning">
+          <div class="overlay">
+            <button class="btn-view" data-project="2">Ver Código</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======= Modal ======= -->
+<div id="codeModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h3 id="modal-title">Project Title</h3>
+      <p id="modal-subtitle">Project Description goes here. Explain what this project does in 1-2 lines.</p>
+    
+    </div>
+
+    <!-- Modal Body (Code) -->
+    <div class="modal-body">
+      <pre><code id="modal-code"></code></pre>
+    </div>
+
+    <!-- Modal Footer (Navigation) -->
+    <div class="modal-footer">
+      <button id="prev"><i class="bi bi-arrow-left"></i> Anterior</button>
+      <button id="next">Siguiente <i class="bi bi-arrow-right"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- ======= CSS ======= -->
+<style>
+  .project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .project-card:hover {
+    transform: scale(1.03);
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .project-card:hover .overlay {
+    opacity: 1;
+  }
+
+  .project-box {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: 100%;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    border-top: 4px solid #149ddd;
+    transition: 0.3s;
+  }
+
+  .project-box h4 {
+    color: #0e3c68;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .project-box .desc {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+
+  .project-box .spacer {
+    flex-grow: 1;
+  }
+
+  /* pushes button to bottom */
+  .btn-view {
+    background: #149ddd;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+  }
+
+  .btn-view:hover {
+    background: #0f82bb;
+  }
+
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .modal-content {
+    background: #fff;
+    border-radius: 16px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 25px 30px;
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.25);
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .close:hover {
+    color: #149ddd;
+  }
+
+  .modal-header {
+    flex-direction: column;
+    align-items: start;
+    padding-left: 0;
+    padding-bottom: 20px;
+  }
+
+  .modal-header h3 {
+    margin: 0;
+    color: #149ddd;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  .modal-header p {
+    margin: 8px 0 0;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .modal-header hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin-top: 12px;
+  }
+
+  .modal-body {
+    flex: 1;
+    overflow: auto;
+    padding: 15px 25px 10px 25px;
+    background: #1e1e1e;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .modal-body pre {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #dcdcdc;
+    overflow: auto;
+    white-space: pre;
+  }
+
+  .modal-footer {
+    padding: 12px 0 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid #eee;
+  }
+
+  .modal-footer button {
+    background: #149ddd;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .modal-footer button:hover {
+    background: #0f82bb;
+  }
+
+  @media(max-width:768px) {
+    .modal-content {
+      max-height: 95vh;
+      padding: 20px;
+    }
+
+    .modal-header h3 {
+      font-size: 1.5rem;
+    }
+
+    .modal-footer {
+      gap: 4px;
+    }
+
+    .modal-footer button {
+      padding: 6px 10px;
+    }
+  }
+</style>
+
+<!-- ======= JS ======= -->
+<script>
+  const projects = [
+    {
+      title: "SQL Data Analysis", subtitle: "Análisis de usuarios activos y resumen de pedidos con SQL.", code: `-- Obtener usuarios activos
 SELECT id, nombre, email
 FROM usuarios
 WHERE activo = 1
@@ -295,168 +552,63 @@ ORDER BY fecha_registro DESC;
 SELECT MONTH(fecha_pedido) AS mes, COUNT(*) AS total_pedidos
 FROM pedidos
 GROUP BY MONTH(fecha_pedido);
-</code></pre>
-          </div>
 
-          <a href="https://github.com/username/sql-analysis" target="_blank" class="github-link">Ver en GitHub</a>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="project-box">
-          <h4>Python Automatización</h4>
-          <p class="desc">Script de automatización para recolectar datos y exportar CSV con Python.</p>
-
-          <input type="checkbox" id="py1" class="toggle">
-          <label for="py1" class="btn-view">Ver Código</label>
-
-          <div class="code-box">
-            <pre><code>
-import csv, requests
-
+-- Long code test: repeat lines
+${Array(50).fill("SELECT * FROM tabla_prueba;").join("\n")}
+` },
+    {
+      title: "Python Automatización", subtitle: "Recolectar datos y exportar CSV con Python.", code: `import csv, requests
 response = requests.get('https://api.ejemplo.com/datos')
 data = response.json()
-
 with open('salida.csv', 'w', newline='') as f:
     writer = csv.DictWriter(f, fieldnames=data[0].keys())
     writer.writeheader()
     writer.writerows(data)
-</code></pre>
-          </div>
-
-          <a href="https://github.com/username/python-automation" target="_blank" class="github-link">Ver en GitHub</a>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="project-box">
-          <h4>Machine Learning</h4>
-          <p class="desc">Modelo de clasificación con Random Forest para datos de Iris.</p>
-
-          <input type="checkbox" id="ml1" class="toggle">
-          <label for="ml1" class="btn-view">Ver Código</label>
-
-          <div class="code-box">
-            <pre><code>
-from sklearn.datasets import load_iris
+` },
+    {
+      title: "Machine Learning", subtitle: "Clasificación de datos Iris con Random Forest.", code: `from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
-
 X, y = load_iris(return_X_y=True)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 modelo = RandomForestClassifier(n_estimators=100).fit(X_train, y_train)
 print("Precisión:", accuracy_score(y_test, modelo.predict(X_test)))
-</code></pre>
-          </div>
+` }
+  ];
 
-          <a href="https://github.com/username/ml-model" target="_blank" class="github-link">Ver en GitHub</a>
-        </div>
-      </div>
+  let currentIndex = 0;
+  const modal = document.getElementById('codeModal');
+  const modalTitle = document.getElementById('modal-title');
+  const modalSubtitle = document.getElementById('modal-subtitle');
+  const modalCode = document.getElementById('modal-code');
+  const closeBtn = document.querySelector('.close');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
 
-    </div>
-  </div>
-</section>
-
-<!-- ======= CSS ======= -->
-<style>
-  .portfolio {
-    padding: 80px 0;
+  function openModal(index) {
+    currentIndex = index;
+    modalTitle.textContent = projects[index].title;
+    modalSubtitle.textContent = projects[index].subtitle;
+    modalCode.textContent = projects[index].code;
+    modal.style.display = 'flex';
   }
 
-  /* Project Boxes */
-  .project-box {
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    padding: 25px 20px 30px;
-    transition: all 0.4s ease;
-    border-top: 4px solid #149ddd;
-    height: 100%;
-  }
+  document.querySelectorAll('.btn-view').forEach((btn, idx) => { btn.addEventListener('click', () => openModal(idx)); });
+  closeBtn.addEventListener('click', () => { modal.style.display = 'none'; });
+  window.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
+  prevBtn.addEventListener('click', () => { currentIndex = (currentIndex - 1 + projects.length) % projects.length; openModal(currentIndex); });
+  nextBtn.addEventListener('click', () => { currentIndex = (currentIndex + 1) % projects.length; openModal(currentIndex); });
 
-  .project-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  }
 
-  .project-box h4 {
-    font-weight: 700;
-    color: #0e3c68;
-    margin-bottom: 8px;
-  }
-
-  .project-box .desc {
-    color: #555;
-    font-size: 0.95rem;
-    margin-bottom: 12px;
-  }
-
-  /* Button */
-  .btn-view {
-    display: inline-block;
-    background: #149ddd;
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
-  }
-
-  .btn-view:hover {
-    background: #0f82bb;
-  }
-
-  /* GitHub link */
-  .github-link {
-    display: inline-block;
-    margin-top: 12px;
-    color: #149ddd;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-
-  .github-link:hover {
-    color: #0f82bb;
-  }
-
-  /* Code box */
-  .code-box {
-    max-height: 0;
-    overflow: hidden;
-    background: #1e1e1e;
-    color: #dcdcdc;
-    border-radius: 8px;
-    margin-top: 12px;
-    padding: 0 12px;
-    font-size: 0.85rem;
-    transition: all 0.5s ease;
- 
-}
-
-  .code-box pre {
-    margin: 12px 0;
-    overflow-x: auto;
-  }
-
-  /* Toggle logic */
-  .toggle {
-    display: none;
-  }
-
-  .toggle:checked+.btn-view+.code-box {
-    max-height: 400px;
-    padding: 12px;
-    transition: all 0.5s ease-in-out;
-  }
-</style>
-
-    <!-- Services Section -->
+    document.querySelectorAll('.btn-view').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const index = btn.dataset.project;
+        openModal(index); // Use your existing modal
+      });
+    });
+</script>
+<!-- ======= Portfolio Section ======= -->
     
 
     <!-- Testimonials Section -->
