@@ -257,180 +257,204 @@
 
     </section><!-- /Resume Section -->
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section light-background">
+  
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portafolio</h2>
-        <p>En esta sección se presentan proyectos que reflejan la formación y experiencia práctica adquirida en análisis de datos, automatización con Python y gestión de información con SQL. Cada proyecto demuestra la capacidad de transformar datos en resultados claros y útiles, aplicando técnicas de análisis e inteligencia artificial para resolver problemas reales. Estos trabajos evidencian preparación y disposición para contribuir de manera efectiva en entornos profesionales del ámbito de los datos..</p>
-      </div><!-- End Section Title -->
+    <!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio section light-background">
 
-      <div class="container">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Portafolio</h2>
+    <p>En esta sección se presentan proyectos que reflejan la formación y experiencia práctica adquirida en análisis de
+      datos, automatización con Python y gestión de información con SQL. Cada proyecto demuestra la capacidad de
+      transformar datos en resultados claros y útiles, aplicando técnicas de análisis e inteligencia artificial para
+      resolver problemas reales.</p>
+  </div><!-- End Section Title -->
 
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+  <div class="container">
+    <div class="row gy-4">
 
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">SQL</li>
-            <li data-filter=".filter-product">PYTHON</li>
-            <li data-filter=".filter-branding">MACHINE LEARNING</li>
-            <li data-filter=".filter-books">EXCEL</li>
-          </ul><!-- End Portfolio Filters -->
+      <!-- Project 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="project-box">
+          <h4>SQL Data Analysis</h4>
+          <p class="desc">Proyecto de análisis de usuarios activos y resumen de pedidos con SQL.</p>
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+          <input type="checkbox" id="sql1" class="toggle">
+          <label for="sql1" class="btn-view">Ver Código</label>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="img/portfolio/app-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>SQL</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+          <div class="code-box">
+            <pre><code>
+-- Obtener usuarios activos
+SELECT id, nombre, email
+FROM usuarios
+WHERE activo = 1
+ORDER BY fecha_registro DESC;
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="img/portfolio/product-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>PYTHON</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="img/portfolio/product-1.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+-- Resumen de pedidos
+SELECT MONTH(fecha_pedido) AS mes, COUNT(*) AS total_pedidos
+FROM pedidos
+GROUP BY MONTH(fecha_pedido);
+</code></pre>
+          </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="img/portfolio/branding-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>MACHINE LEARNING</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="img/portfolio/branding-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="img/portfolio/books-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>EXCEL</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="img/portfolio/books-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="img/portfolio/app-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="img/portfolio/app-2.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="img/portfolio/product-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="img/portfolio/product-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="img/portfolio/branding-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="img/portfolio/branding-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="img/portfolio/books-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="img/portfolio/books-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="img/portfolio/app-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>App 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="img/portfolio/app-3.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div class="portfolio-content h-100">
-                <img src="img/portfolio/product-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Product 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="img/portfolio/product-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div class="portfolio-content h-100">
-                <img src="img/portfolio/branding-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Branding 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="img/portfolio/branding-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div class="portfolio-content h-100">
-                <img src="img/portfolio/books-3.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Books 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="img/portfolio/books-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
-
+          <a href="https://github.com/username/sql-analysis" target="_blank" class="github-link">Ver en GitHub</a>
         </div>
-
       </div>
 
-    </section><!-- /Portfolio Section -->
+      <!-- Project 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="project-box">
+          <h4>Python Automatización</h4>
+          <p class="desc">Script de automatización para recolectar datos y exportar CSV con Python.</p>
+
+          <input type="checkbox" id="py1" class="toggle">
+          <label for="py1" class="btn-view">Ver Código</label>
+
+          <div class="code-box">
+            <pre><code>
+import csv, requests
+
+response = requests.get('https://api.ejemplo.com/datos')
+data = response.json()
+
+with open('salida.csv', 'w', newline='') as f:
+    writer = csv.DictWriter(f, fieldnames=data[0].keys())
+    writer.writeheader()
+    writer.writerows(data)
+</code></pre>
+          </div>
+
+          <a href="https://github.com/username/python-automation" target="_blank" class="github-link">Ver en GitHub</a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="project-box">
+          <h4>Machine Learning</h4>
+          <p class="desc">Modelo de clasificación con Random Forest para datos de Iris.</p>
+
+          <input type="checkbox" id="ml1" class="toggle">
+          <label for="ml1" class="btn-view">Ver Código</label>
+
+          <div class="code-box">
+            <pre><code>
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+
+X, y = load_iris(return_X_y=True)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+modelo = RandomForestClassifier(n_estimators=100).fit(X_train, y_train)
+print("Precisión:", accuracy_score(y_test, modelo.predict(X_test)))
+</code></pre>
+          </div>
+
+          <a href="https://github.com/username/ml-model" target="_blank" class="github-link">Ver en GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======= CSS ======= -->
+<style>
+  .portfolio {
+    padding: 80px 0;
+  }
+
+  /* Project Boxes */
+  .project-box {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    padding: 25px 20px 30px;
+    transition: all 0.4s ease;
+    border-top: 4px solid #149ddd;
+    height: 100%;
+  }
+
+  .project-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .project-box h4 {
+    font-weight: 700;
+    color: #0e3c68;
+    margin-bottom: 8px;
+  }
+
+  .project-box .desc {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+
+  /* Button */
+  .btn-view {
+    display: inline-block;
+    background: #149ddd;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  .btn-view:hover {
+    background: #0f82bb;
+  }
+
+  /* GitHub link */
+  .github-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: #149ddd;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .github-link:hover {
+    color: #0f82bb;
+  }
+
+  /* Code box */
+  .code-box {
+    max-height: 0;
+    overflow: hidden;
+    background: #1e1e1e;
+    color: #dcdcdc;
+    border-radius: 8px;
+    margin-top: 12px;
+    padding: 0 12px;
+    font-size: 0.85rem;
+    transition: all 0.5s ease;
+ 
+}
+
+  .code-box pre {
+    margin: 12px 0;
+    overflow-x: auto;
+  }
+
+  /* Toggle logic */
+  .toggle {
+    display: none;
+  }
+
+  .toggle:checked+.btn-view+.code-box {
+    max-height: 400px;
+    padding: 12px;
+    transition: all 0.5s ease-in-out;
+  }
+</style>
 
     <!-- Services Section -->
     
